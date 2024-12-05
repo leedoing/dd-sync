@@ -59,22 +59,30 @@ const MonitorSyncForm = () => {
     setLoading(true);
 
     try {
-      const requestData = {
-        ...formData,
-        sourceApiUrl: API_URL_OPTIONS[formData.sourceApiUrl as keyof typeof API_URL_OPTIONS],
-        targetApiUrl: API_URL_OPTIONS[formData.targetApiUrl as keyof typeof API_URL_OPTIONS],
-      };
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30초 타임아웃
 
       const response = await fetch('/api/sync/monitor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(requestData),
+        body: JSON.stringify(formData),
+        signal: controller.signal
       });
       
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const data = await response.json();
+      console.log('MonitorSyncForm - Response:', data);
       setResult(data);
     } catch (error) {
-      console.error('Sync failed:', error);
+      console.error('MonitorSyncForm - Error:', error);
+      if (error instanceof Error) {
+        alert(`Sync failed: ${error.message}`);
+      }
     } finally {
       setLoading(false);
     }

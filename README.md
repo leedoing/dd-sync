@@ -17,11 +17,11 @@ Datadog Sync Tool is a web-based tool for synchronizing dashboards and monitors 
 - Synchronize all monitor components including notification settings and thresholds
 
 ### Recommendation Dashboards
+- Datadog Cost Estimate Dashboards
 - Infrastructure Dashboards
 - AWS Infrastructure Dashboards
 - APM Dashboards
 - RUM Dashboards
-- Datadog Cost Estimate Dashboards
 - MySQL Dashboards
 - PostgreSQL Dashboards
 
@@ -71,22 +71,6 @@ Datadog Sync Tool is a web-based tool for synchronizing dashboards and monitors 
 - Existing dashboards/monitors in the target environment will be overwritten
 - No API keys or Application keys are stored in the application
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 ## License
 
-MIT License
+This is a personal project created for internal use. Feel free to use and modify as needed.

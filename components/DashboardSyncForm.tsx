@@ -76,6 +76,7 @@ const DashboardSyncForm = () => {
   const renderInput = (key: string, value: string) => {
     if (key === 'sourceApiUrl' || key === 'targetApiUrl') {
       const currentRegion = Object.entries(API_URL_OPTIONS).find(
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         ([_, url]) => url === value
       )?.[0] || 'US1';
 
