@@ -20,7 +20,7 @@ Datadog Sync Tool is a web-based tool for synchronizing dashboards and monitors 
 - Datadog Cost Estimate Dashboards
 - Infrastructure Dashboards
 - AWS Infrastructure Dashboards
-- APM Dashboards
+- APM Dashboards(Not Traced Metrics, e.g trace.servelt.request)
 - RUM Dashboards
 - MySQL Dashboards
 - PostgreSQL Dashboards
@@ -29,7 +29,7 @@ Datadog Sync Tool is a web-based tool for synchronizing dashboards and monitors 
 - Infrastructure Monitors
 - Network Monitors
 - Kubernetes Monitors
-- APM Monitors
+- APM Monitors(Not Traced Metrics, e.g trace.servelt.request))
 - Log Monitors
 - RUM Monitors
 
