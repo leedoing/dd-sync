@@ -115,7 +115,7 @@ const DashboardSyncForm = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8">
       {loading && <LoadingSpinner />}
       <h2 className="text-2xl font-bold mb-8 text-purple-900">Dashboard Synchronization</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
