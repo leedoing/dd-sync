@@ -27,7 +27,7 @@ if (typeof window !== 'undefined') {
     trackUserInteractions: true,
     trackResources: true,
     trackLongTasks: true,
-    defaultPrivacyLevel: 'allow',
+    defaultPrivacyLevel: 'mask-user-input',
   });
 }
 
