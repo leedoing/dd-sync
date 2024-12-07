@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import LoadingSpinner from './LoadingSpinner'
+import LoadingSpinner from '@/components/common/LoadingSpinner';
 
 interface SyncResult {
   success: boolean;
@@ -108,7 +108,7 @@ const DashboardSyncForm = () => {
                  focus:ring-2 focus:ring-purple-500 focus:border-purple-500
                  placeholder-purple-300 text-gray-900"
         placeholder={key === 'filterTitle' 
-          ? 'Enter Filter Title (Synchronizes dashboards that include text in the title)'
+          ? 'Enter Filter Title (Dashboards Synchronization that include text in the title)'
           : `Enter ${key.replace(/([A-Z])/g, ' $1').toLowerCase()}`}
       />
     );
@@ -117,7 +117,7 @@ const DashboardSyncForm = () => {
   return (
     <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8">
       {loading && <LoadingSpinner />}
-      <h2 className="text-2xl font-bold mb-8 text-purple-900">Dashboard Synchronization</h2>
+      <h2 className="text-2xl font-bold mb-8 text-purple-900">Dashboards Synchronization</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 gap-6">
           {Object.entries(formData).map(([key, value]) => (

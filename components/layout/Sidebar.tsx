@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 interface SidebarProps {
@@ -8,10 +9,10 @@ interface SidebarProps {
 
 export default function Sidebar({ activeMenu, onMenuChange, resetMenu }: SidebarProps) {
   const menuItems = [
-    { id: 'dashboard', label: 'Sync Dashboards' },
-    { id: 'monitor', label: 'Sync Monitors' },
-    { id: 'recommendation-dashboard', label: 'Recommendation Dashboards' },
-    { id: 'recommendation-monitor', label: 'Recommendation Monitors' },
+    { id: 'dashboard', label: 'Dashboards Sync' },
+    { id: 'monitor', label: 'Monitors Sync' },
+    { id: 'recommendation-dashboard', label: 'Recommended Dashboards' },
+    { id: 'recommendation-monitor', label: 'Recommended Monitors' },
   ];
 
   return (
@@ -22,7 +23,7 @@ export default function Sidebar({ activeMenu, onMenuChange, resetMenu }: Sidebar
           className="w-full flex justify-center items-center hover:opacity-90 transition-opacity"
         >
           <img 
-            src="/Bits_Korea.jpeg"
+            src="/main.png"
             alt="Datadog Sync Tool Logo" 
             className="h-36 w-auto"
           />

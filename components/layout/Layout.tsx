@@ -5,11 +5,11 @@ import { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
-import DashboardSyncForm from './DashboardSyncForm';
-import MonitorSyncForm from './MonitorSyncForm';
-import RecommendationDashboards from './RecommendationDashboards';
-import RecommendationMonitors from './RecommendationMonitors';
-import MainDashboard from './MainDashboard';
+import DashboardSync from '../sync/dashboard/DashboardSync';
+import MonitorSync from '../sync/monitor/MonitorSync';
+import RecommendationDashboards from '../recommendations/dashboard/RecommendationDashboards';
+import RecommendationMonitors from '../recommendations/monitor/RecommendationMonitors';
+import MainDashboard from '../home/MainDashboard';
 
 type LayoutProps = {
   children?: ReactNode;
@@ -25,9 +25,9 @@ const Layout = ({ children }: LayoutProps) => {
   const renderContent = () => {
     switch (activeMenu) {
       case 'dashboard':
-        return children || <DashboardSyncForm />;
+        return children || <DashboardSync />;
       case 'monitor':
-        return <MonitorSyncForm />;
+        return <MonitorSync />;
       case 'recommendation-dashboard':
         return <RecommendationDashboards />;
       case 'recommendation-monitor':

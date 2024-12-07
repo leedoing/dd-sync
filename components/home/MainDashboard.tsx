@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import React from 'react';
@@ -10,14 +11,13 @@ export default function MainDashboard() {
         <section>
           <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
             <p className="text-yellow-800 font-medium">
-              This is not an official Datadog service. This is a personal service created to enhance the convenience of using Datadog.
+              This is not an official Datadog service. This is a personal project created to enhance the convenience of using Datadog and for PoC (Proof of Concept) purposes.
             </p>
           </div>
           <p className="text-gray-600 text-lg font-sans">
-            A powerful web-based tool for synchronizing dashboards and monitors between different Datadog accounts. 
-            This tool also provides standardized dashboards and monitors for optimal usage. 
-            Please note that the recommended dashboards and monitors are not official Datadog content, 
-            but rather a collection curated by developers based on their experience.
+            This is a tool that helps you easily sync Dashboards and Monitors between different Datadog accounts. 
+            It also recommends some useful Dashboards and Monitors to help you use Datadog quickly and easily. 
+            These recommended Dashboards and Monitors are made from Datadog's out-of-the-box content and my personal experience.
           </p>
         </section>
 
@@ -75,7 +75,7 @@ export default function MainDashboard() {
         {/* 추천 대시보드/모니터 섹션 */}
         <section className="grid md:grid-cols-2 gap-6">
           <div className="bg-purple-50 p-6 rounded-lg">
-            <h2 className="text-xl font-semibold text-purple-900 mb-3">Recommendation Dashboards</h2>
+            <h2 className="text-xl font-semibold text-purple-900 mb-3">Recommended Dashboards</h2>
             <ul className="space-y-2 text-gray-600">
               <li className="flex items-start">
                 <svg className="h-6 w-6 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ export default function MainDashboard() {
           </div>
 
           <div className="bg-purple-50 p-6 rounded-lg">
-            <h2 className="text-xl font-semibold text-purple-900 mb-3">Recommendation Monitors</h2>
+            <h2 className="text-xl font-semibold text-purple-900 mb-3">Recommended Monitors</h2>
             <ul className="space-y-2 text-gray-600">
               <li className="flex items-start">
                 <svg className="h-6 w-6 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

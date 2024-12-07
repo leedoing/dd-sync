@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Datadog Syncs Tool",
-  description: "The Datadog Sync Tool facilitates seamless transfer of Dashboards and Monitors between accounts and also recommends standard Dashboards and Monitors for optimal usage.",
+  description: "This is a tool that helps you easily sync Dashboards and Monitors between different Datadog accounts. It also recommends some useful Dashboards and Monitors to help you use Datadog quickly and easily. These recommended Dashboards and Monitors are made from Datadog's out-of-the-box content and my personal experience.",
 };
 
 export default function RootLayout({

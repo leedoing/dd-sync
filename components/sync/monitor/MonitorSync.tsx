@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import LoadingSpinner from './LoadingSpinner';
+import LoadingSpinner from '@/components/common/LoadingSpinner';
 
 interface SyncResult {
   success: boolean;
@@ -123,7 +123,7 @@ const MonitorSyncForm = () => {
                  focus:ring-2 focus:ring-purple-500 focus:border-purple-500
                  placeholder-purple-300 text-gray-900"  // 텍스트 색상을 검은색으로 변경
         placeholder={key === 'filterTag' 
-          ? 'Enter Filter Tag (e.g env:prod, Synchronizes monitors by filtering based on tag)'
+          ? 'Enter Filter Tag (Monitors synchronization by filtering based on tag, e.g env:prod)'
           : `Enter ${key.replace(/([A-Z])/g, ' $1').toLowerCase()}`}
       />
     );
@@ -132,7 +132,7 @@ const MonitorSyncForm = () => {
   return (
     <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8">
       {loading && <LoadingSpinner />}
-      <h2 className="text-2xl font-bold mb-8 text-purple-900">Monitor Synchronization</h2>
+      <h2 className="text-2xl font-bold mb-8 text-purple-900">Monitors Synchronization</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 gap-6">
           {Object.entries(formData).map(([key, value]) => (
