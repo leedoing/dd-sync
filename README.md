@@ -1,39 +1,38 @@
-# dd-sync
-
 # Datadog Sync Tool
 
-Datadog Sync Tool is a web-based tool for synchronizing dashboards and monitors between different Datadog accounts. It also provides standardized dashboards and monitors that I have personally created. API keys used for synchronization are not stored.
+A tool that helps you easily sync Dashboards and Monitors between different Datadog accounts. It also recommends some useful Dashboards and Monitors to help you use Datadog quickly and easily.
 
-## Key Features
+> ⚠️ **Note**: This is not an official Datadog service. This is a personal project created to enhance the convenience of using Datadog and for PoC (Proof of Concept) purposes.
 
-### Dashboard Synchronization
-- Clone dashboards from source to target environment
+## Features
+
+### Dashboard Sync
+- Clone dashboards between environments
 - Title-based filtering support
-- Synchronize all dashboard components including settings, widgets, and variables
+- Sync all dashboard components
 
-### Monitor Synchronization
-- Clone monitors from source to target environment
+### Monitor Sync
+- Clone monitors between environments
 - Tag-based filtering support
-- Synchronize all monitor components including notification settings and thresholds
+- Sync all monitor settings
 
-### Recommendation Dashboards
-- Datadog Cost Estimate Dashboards
-- Infrastructure Dashboards
-- AWS Infrastructure Dashboards
-- APM Dashboards(Not Traced Metrics, e.g trace.servelt.request)
-- RUM Dashboards
-- MySQL Dashboards
-- PostgreSQL Dashboards
+## Recommendations
 
-### Recommendation Monitors
-- Infrastructure Monitors
-- Network Monitors
-- Kubernetes Monitors
-- APM Monitors(Not Traced Metrics, e.g trace.servelt.request))
-- Log Monitors
-- RUM Monitors
+### Recommended Dashboards
+- Datadog Cost Estimate
+- Infrastructure & AWS
+- APM (Not Traced Metrics, e.g trace.servlet.request)
+- RUM
+- MySQL & PostgreSQL
 
-### Supported Datadog Regions
+### Recommended Monitors
+- Infrastructure & Network
+- Kubernetes
+- APM (Not Traced Metrics, e.g trace.servlet.request)
+- Logs
+- RUM
+
+## Supported Regions
 - US1 (api.datadoghq.com)
 - US3 (api.us3.datadoghq.com)
 - US5 (api.us5.datadoghq.com)
@@ -41,15 +40,11 @@ Datadog Sync Tool is a web-based tool for synchronizing dashboards and monitors 
 - AP1 (api.ap1.datadoghq.com)
 - US1-FED (api.ddog-gov.com)
 
-## Tech Stack
+## Important Notes
+- API keys and Application keys must have appropriate permissions
+- No API keys or Application keys are stored in the application
 
-- Framework: Next.js 14
-- Language: TypeScript
-- Styling: Tailwind CSS
-- HTTP Client: Axios
-- State Management: React Hooks
-
-## Usage
+## Getting Started
 
 1. Source Environment Setup
    - Enter API Key and Application Key
@@ -63,13 +58,6 @@ Datadog Sync Tool is a web-based tool for synchronizing dashboards and monitors 
 3. Click Sync Button
    - Monitor synchronization progress
    - Check result report
-
-## Important Notes
-
-- API keys and Application keys must have appropriate permissions
-- Synchronizing large numbers of dashboards/monitors may take time
-- Existing dashboards/monitors in the target environment will be overwritten
-- No API keys or Application keys are stored in the application
 
 ## License
 
