@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { datadogRum } from '@datadog/browser-rum';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,9 +14,26 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+// Datadog RUM initialization
+if (typeof window !== 'undefined') {
+  datadogRum.init({
+    applicationId: '267deee3-0bfc-439b-a059-e20ac7c1afd2',
+    clientToken: 'pub438544fdaf9c6399426a1fa39453ef00',
+    site: 'datadoghq.com',
+    service: 'dd-sync',
+    env: 'prod',
+    sessionSampleRate: 100,
+    sessionReplaySampleRate: 100,
+    trackUserInteractions: true,
+    trackResources: true,
+    trackLongTasks: true,
+    defaultPrivacyLevel: 'allow',
+  });
+}
+
 export const metadata: Metadata = {
   title: "Datadog Syncs Tool",
-  description: "This is a tool that helps you easily sync Dashboards and Monitors between different Datadog accounts. It also recommends some useful Dashboards and Monitors to help you use Datadog quickly and easily. These recommended Dashboards and Monitors are made from Datadog's out-of-the-box content and my personal experience.",
+  description: "The Datadog Sync Tool facilitates seamless transfer of Dashboards and Monitors between accounts and also recommends standard Dashboards and Monitors for optimal usage.",
 };
 
 export default function RootLayout({
