@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { datadogRum } from '@datadog/browser-rum';
+import { DatadogRUM } from "@/components/common/DatadogRUM";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,23 +13,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
-// Datadog RUM initialization
-if (typeof window !== 'undefined') {
-  datadogRum.init({
-    applicationId: '267deee3-0bfc-439b-a059-e20ac7c1afd2',
-    clientToken: 'pub438544fdaf9c6399426a1fa39453ef00',
-    site: 'datadoghq.com',
-    service: 'dd-sync',
-    env: 'prod',
-    sessionSampleRate: 100,
-    sessionReplaySampleRate: 100,
-    trackUserInteractions: true,
-    trackResources: true,
-    trackLongTasks: true,
-    defaultPrivacyLevel: 'mask-user-input',
-  });
-}
 
 export const metadata: Metadata = {
   title: "Datadog Syncs Tool",
@@ -43,9 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <DatadogRUM />
         {children}
       </body>
     </html>
