@@ -8,14 +8,20 @@ export function DatadogRUM() {
     clientToken: 'pub438544fdaf9c6399426a1fa39453ef00',
     site: 'datadoghq.com',
     service: 'dd-sync',
-    env: 'prod',
+    env: process.env.DD_ENV || 'prod',
+    version: '1.0.0',
     sessionSampleRate: 100,
     sessionReplaySampleRate: 97,
     trackUserInteractions: true,
     trackResources: true,
     trackLongTasks: true,
     defaultPrivacyLevel: 'mask-user-input',
+    allowedTracingUrls: [
+      /^https?:\/\/.*\.leedoing\.com(:\d+)?\/.*$/,  // *.leedoing.com의 전체 URL
+      /^http:\/\/localhost(:\d+)?\/.*$/              // localhost의 전체 URL
+    ],
+    traceSampleRate: 100
   });
 
   return null;
-} 
+}
