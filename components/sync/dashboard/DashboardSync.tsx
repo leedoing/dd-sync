@@ -98,6 +98,14 @@ const DashboardSyncForm = () => {
       );
     }
 
+    const placeholderText = {
+      sourceApiKey: 'Enter source api key',
+      sourceAppKey: 'Enter source app key',
+      targetApiKey: `Enter ${key.replace(/([A-Z])/g, ' $1').toLowerCase()}`,
+      targetAppKey: `Enter ${key.replace(/([A-Z])/g, ' $1').toLowerCase()}`,
+      filterTitle: 'Enter Filter Title (Dashboards Synchronization that include text in the title'
+    }[key] || `Enter ${key.replace(/([A-Z])/g, ' $1').toLowerCase()}`;
+
     return (
       <input
         type="text"
@@ -107,9 +115,7 @@ const DashboardSyncForm = () => {
         className="w-full px-4 py-2 border border-purple-200 rounded-md shadow-sm 
                  focus:ring-2 focus:ring-purple-500 focus:border-purple-500
                  placeholder-purple-300 text-gray-900"
-        placeholder={key === 'filterTitle' 
-          ? 'Enter Filter Title (Dashboards Synchronization that include text in the title)'
-          : `Enter ${key.replace(/([A-Z])/g, ' $1').toLowerCase()}`}
+        placeholder={placeholderText}
       />
     );
   };
@@ -120,14 +126,26 @@ const DashboardSyncForm = () => {
       <h2 className="text-2xl font-bold mb-8 text-purple-900">Dashboards Synchronization</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 gap-6">
-          {Object.entries(formData).map(([key, value]) => (
-            <div key={key}>
-              <label className="block text-sm font-medium text-purple-900 mb-2">
-                {key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
-              </label>
-              {renderInput(key, value)}
-            </div>
-          ))}
+          {Object.entries(formData).map(([key, value]) => {
+            const labelText = {
+              sourceApiKey: 'Source Api Key (e.g 8148f4a3951e42d82419fbdd96ffc3a0)',
+              sourceAppKey: 'Source App Key (e.g 0011105ddbcd78164663875d3d3db8ba6401ee85)',
+              sourceApiUrl: 'Source Api Url',
+              filterTitle: 'Filter Title (e.g Datadog)',
+              targetApiKey: 'Target Api Key',
+              targetAppKey: 'Target App Key',
+              targetApiUrl: 'Target Api Url'
+            }[key] || key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
+
+            return (
+              <div key={key}>
+                <label className="block text-sm font-medium text-purple-900 mb-2">
+                  {labelText}
+                </label>
+                {renderInput(key, value)}
+              </div>
+            );
+          })}
         </div>
 
         <button
